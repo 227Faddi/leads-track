@@ -18,3 +18,15 @@ th, td {
     white-space: normal;
 }
 
+.btn-social {
+    border-radius: 100%;
+    display: inline-flex;
+    width: 3.25rem;
+    height: 3.25rem;
+    font-size: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    color: #fff;
+    margin: 0 0.25em;
+}

@@ -2,6 +2,19 @@ const deleteBtn = document.querySelectorAll('.deleteBtn')
 const notContacted = document.querySelectorAll('.notContacted')
 const contacted = document.querySelectorAll('.contacted')
 
+
+document.addEventListener('DOMContentLoaded', function () {
+  const modalKey = 'modalShown';
+  // Check if the modal has been shown in this session
+  const myModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+  myModal.show();
+  if (!sessionStorage.getItem(modalKey)) {
+    // Set the flag in session storage so the modal doesn't show again during the session
+    sessionStorage.setItem(modalKey, 'true');
+  }
+});
+
+
 Array.from(deleteBtn).forEach((element) =>{
   element.addEventListener('click', deleteLead)
 })

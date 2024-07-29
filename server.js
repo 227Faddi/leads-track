@@ -4,12 +4,13 @@ const PORT = process.env.PORT || 8000;
 const bodyParser = require('body-parser');
 const {MongoClient, ObjectId} = require('mongodb');
 const dotenv = require('dotenv');
-dotenv.config()
+dotenv.config();
+const MONGO_URI = process.env.URI
 
-MongoClient.connect(process.env.URI)
+MongoClient.connect(MONGO_URI)
   .then(client => {
     console.log('Connected to Database')
-    const db = client.db('lead-sync')
+    const db = client.db('leads-track')
     const leadsCollection = db.collection('leads')
     
     app.set('view engine', 'ejs')

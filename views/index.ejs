@@ -3,20 +3,37 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Leads Track - Manage Your Leads</title>
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   </head>
   <body>
-    
+    <!-- Modal -->
+    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5 text-center" id="welcomeModalLabel">Welcome to Leads Track!</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Manage your leads with ease. Our app helps you keep track of all your sales leads, including key details and follow-ups. Start organizing your leads today for a more efficient sales process.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Get Started</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container-fluid px-md-5">
       <h1 class="text-center my-5">Leads Track</h1>
-
       <div class="row">
         <!-- Leads Form -->
         <div class="col-md-2">
-          <h2>Add a new lead</h2>
+          <h2>Add a New Lead</h2>
           <form action="/leads" method="post">
             <div class="mb-2">
               <label class="p-2 fw-bold" for="leadName">Name:</label>
@@ -38,13 +55,13 @@
               <label class="p-2 fw-bold" for="leadNotes">Notes:</label>
               <textarea class="form-control" rows="3" placeholder="Enter additional notes" name="notes"></textarea>
             </div>
-            <button type="submit" class="btn btn-dark btn-block">Add Lead</button>
+            <button type="submit" class="btn btn-dark mt-3">Add Lead</button>
           </form>
         </div>
         <!-- Table with Leads -->
         <div class="col-md-10 mt-5 mt-md-0">
           <h2>Leads Details</h2>
-          <div class="table-responsive-md">
+          <div class="table-responsive-xl">
             <table class="table table-striped text-center align-middle">
               <thead class="table-dark">
                 <tr>
@@ -82,8 +99,20 @@
 
         </div>
       </div>
-    </div>  
+    </div>
+    <footer class="bg-dark text-white py-4 mt-5 text-center">
+      <div class="d-md-flex justify-content-around align-items-center">
+        <p class="mb-0 col">© 2024 Leads Track. All rights reserved.</p>
+			  <!-- social-links -->
+        <div class="col d-flex justify-content-center mt-md-0 mt-3">
+          <a class="btn-social" href="https://twitter.com/khoumaDev"><i class="bi bi-twitter-x"></i></a>
+          <a class="btn-social" href="https://www.linkedin.com/in/serigne-khouma/"><i class="bi bi-linkedin"></i></a>
+          <a class="btn-social" href="https://github.com/227Faddi/leads-track"><i class="bi bi-github"></i></a>
+          <a class="btn-social" href="https://faliloukhouma.com/"><i class="bi bi-person-fill"></i></a>
+        </div>
+      </div>
+    </footer>
+
     <script src='js/main.js'></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
