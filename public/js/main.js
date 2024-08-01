@@ -1,7 +1,7 @@
 const deleteBtn = document.querySelectorAll('.deleteBtn')
 const notContacted = document.querySelectorAll('.notContacted')
 const contacted = document.querySelectorAll('.contacted')
-
+const leadDetails = document.querySelectorAll('.lead-details') 
 
 document.addEventListener('DOMContentLoaded', function () {
   const modalKey = 'modalShown';
@@ -41,7 +41,7 @@ Array.from(notContacted).forEach((element) =>{
   element.addEventListener('click', leadContacted)
 })
 
-async function leadContacted(){
+async function leadContacted(){ 
   const leadId = this.parentNode.getAttribute('data-id');
   try{
     const response = await fetch('/contacted', {
@@ -80,3 +80,19 @@ async function leadNotContacted(){
     console.log(err)
   }
 }
+
+
+// SCROLL RELOAD FIX
+// Save scroll position before the page unloads
+window.addEventListener('beforeunload', () => {
+  localStorage.setItem('scrollPosition', window.scrollY);
+});
+
+// Restore scroll position after the page loads
+window.addEventListener('load', () => {
+  const scrollPosition = localStorage.getItem('scrollPosition');
+  if (scrollPosition !== null) {
+      window.scrollTo(0, parseInt(scrollPosition, 10));
+      localStorage.removeItem('scrollPosition'); // Clear the saved position
+  }
+});

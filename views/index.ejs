@@ -23,26 +23,26 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title fs-5 text-center" id="welcomeModalLabel">Welcome to Leads Track!</h2>
+            <h2 class="modal-title fs-3 fw-bolder text-success" id="welcomeModalLabel">Welcome to Leads Track!</h2>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p>Manage your leads with ease. Our app helps you keep track of all your sales leads, including key details and follow-ups. Start organizing your leads today for a more efficient sales process.</p>
+            <p>Simplify lead management. Our app helps you keep track of all your sales leads, including key details and follow-ups. Start organizing your leads today for a more efficient sales process.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Get Started</button>
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Get Started</button>
           </div>
         </div>
       </div>
     </div>
 
     <div class="container-fluid px-md-5">
-      <h1 class="text-center my-5">Leads Track</h1>
+      <h1 class="text-white text-center my-5">Leads Track</h1>
       <div class="row">
         <!-- Leads Form -->
         <div class="col-md-2">
-          <h2>Add a New Lead</h2>
-          <form action="/leads" method="post">
+          <h2 class="text-white">Add a New Lead</h2>
+          <form action="/leads" method="post" class="text-white">
             <div class="mb-2">
               <label class="p-2 fw-bold" for="leadName">Name:</label>
               <input type="text" class="form-control" placeholder="Enter lead name" name="name" required>
@@ -68,7 +68,7 @@
         </div>
         <!-- Table with Leads -->
         <div class="col-md-10 mt-5 mt-md-0">
-          <h2>Leads Details</h2>
+          <h2 class="text-white">Leads Details</h2>
           <div class="table-responsive-xl">
             <table class="table table-striped text-center align-middle">
               <thead class="table-dark">
@@ -85,21 +85,30 @@
               </thead>
               <tbody>
                 <% leads.forEach((lead, index) =>{%>
-                  <!-- ObjectId stored in parent attribute-->
-                  <tr class="border leads-details" data-id="<%= lead._id %>">
-                    <td scope="row"><%= index + 1 %></td>
-                    <td><%= lead.name %></td>
-                    <td><%= lead.industry %></td>
-                    <td><%= lead.phone %></td>
-                    <td><%= lead.email %></td>
-                    <td class="text-wrap"><%= lead.notes %></td>
-                    <% if(lead.contacted === 'yes') { %>
+                  <% if(lead.contacted === 'yes') { %>
+                    <!-- ObjectId stored in parent attribute-->
+                    <tr class="border lead-details table-success" data-id="<%= lead._id %>">
+                      <td scope="row"><%= index + 1 %></td>
+                      <td><%= lead.name %></td>
+                      <td><%= lead.industry %></td>
+                      <td><%= lead.phone %></td>
+                      <td><%= lead.email %></td>
+                      <td class="text-wrap"><%= lead.notes %></td>
                       <td class="contacted text-wrap"><i class="bi bi-check2-circle"></i></td>
-                    <% } else{ %>
+                      <td class="deleteBtn text-wrap"><i class="bi bi-trash"></i></td>
+                    </tr>
+                  <% } else{ %>
+                    <tr class="border lead-details" data-id="<%= lead._id %>">
+                      <td scope="row"><%= index + 1 %></td>
+                      <td><%= lead.name %></td>
+                      <td><%= lead.industry %></td>
+                      <td><%= lead.phone %></td>
+                      <td><%= lead.email %></td>
+                      <td class="text-wrap"><%= lead.notes %></td>
                       <td class="notContacted text-wrap"><i class="bi bi-circle"></i></td>
-                    <% } %>
-                    <td class="deleteBtn text-wrap"><i class="bi bi-trash"></i></td>
-                  </tr>
+                      <td class="deleteBtn text-wrap"><i class="bi bi-trash"></i></td>
+                    </tr>
+                  <% } %>
                 <% }) %>
               </tbody>
             </table>
@@ -108,7 +117,7 @@
         </div>
       </div>
     </div>
-    <footer class="bg-dark text-white py-4 mt-5 text-center">
+    <footer class="bg-dark text-white py-4 text-center">
       <div class="d-md-flex justify-content-around align-items-center">
         <p class="mb-0 col">© 2024 Leads Track. All rights reserved.</p>
 			  <!-- social-links -->

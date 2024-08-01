@@ -33,7 +33,16 @@ MongoClient.connect(MONGO_URI)
     })
   
     app.post('/leads', (req, res) => {
-      req.body.contacted = 'no'
+      function capitalizeWords(name) {
+        return name
+        .split(' ')
+        .map(word => word[0].toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
+      }
+      req.body.contacted = 'no';
+      req.body.name = capitalizeWords(req.body.name)
+      req.body.industry = capitalizeWords(req.body.industry)
+
       leadsCollection
         .insertOne(req.body)
         .then(result =>{
@@ -79,8 +88,7 @@ MongoClient.connect(MONGO_URI)
       })
       .catch(error => console.error(error))
     })
-  
-  
+    
     app.listen(PORT, () =>{
       console.log(`The server is running on port: ${PORT}`)
     })
