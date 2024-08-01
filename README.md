@@ -1,6 +1,6 @@
 # 📊 Leads Track : [Visit Here](https://leads-track.onrender.com/)
 
-Leads Track is an application designed for managing and tracking sales leads. It enables users to easily add new leads, view detailed information, and monitor interactions to ensure timely follow-ups.
+Leads Track is an application designed to manage and track sales leads. It lets users easily add new leads, view detailed information, and monitor interactions to ensure timely follow-ups.
 
 ![Leads Track Preview](/public/assets/img/preview.gif)
 
