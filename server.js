@@ -13,12 +13,11 @@ MongoClient.connect(MONGO_URI)
     const db = client.db('leads-track')
     const leadsCollection = db.collection('leads')
     
-    app.set('view engine', 'ejs')
-  
-    app.use(bodyParser.urlencoded({ extended: true }));
-  
+    app.use(express.urlencoded({ extended: true }));
+    app.use(express.json());
+    app.set('view engine', 'ejs')  
     app.use(express.static('public'))
-    app.use(bodyParser.json())
+
     
     app.get('/', (req, res) =>{
       leadsCollection
