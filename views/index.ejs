@@ -1,138 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="canonical" href="https://leads-track.onrender.com/">
-    <meta name="description" content="Leads tracker"/>
-    <meta name="keywords" content="Leads tracker">
-    <title>Leads Track - Manage Your Leads</title>
-    <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/assets/favicon/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-  </head>
-  <body>
-    <!-- Modal Intro-->
-    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title fs-3 fw-bolder text-success" id="welcomeModalLabel">Welcome to Leads Track!</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>Simplify lead management. Our app helps you keep track of all your sales leads, including key details and follow-ups. Start organizing your leads today for a more efficient sales process.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Get Started</button>
-          </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="canonical" href="https://leads-track.onrender.com/">
+        <meta name="description" content="Leads tracker"/>
+        <meta name="keywords" content="Leads tracker">
+        <title>Leads Track - Home</title>
+        <!-- favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/assets/favicon/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body class="d-flex flex-column">
+        <div class="content container-fluid phone text-white text-center d-flex flex-column justify-content-center align-items-center">
+            <img class="my-5" id="home-icon" src="/assets/img/icon.svg" alt="">
+            <h1>Welcome to Leads Track!</h1>
+            <p class="w-50 fs-4 my-3">Simplify lead management. Our app helps you keep track of all your sales leads, including key details and follow-ups. Start organizing your leads today for a more efficient sales process.</p>
+            <a class="btn btn-dark fs-5" href="/leads">Get Started</a>
         </div>
-      </div>
-    </div>
-    <!-- APP -->
-    <div class="container-fluid px-md-5">
-      <h1 class="text-white text-center my-5">Leads Track</h1>
-      <div class="row">
-        <!-- Leads Form -->
-        <div class="col-md-2">
-          <h2 class="text-white">Add a New Lead</h2>
-          <form action="/leads" method="post" class="text-white">
-            <div class="mb-2">
-              <label class="p-2 fw-bold" for="leadName">Name:</label>
-              <input type="text" id="leadName" class="form-control" placeholder="Enter lead name" name="name" required>
+        <footer class="bg-dark text-white py-4 text-center">
+            <div class="d-md-flex justify-content-around align-items-center">
+            <p class="mb-0 col">© 2024 Leads Track. All rights reserved.</p>
+            <!-- social-links -->
+            <div class="col d-flex justify-content-center mt-md-0 mt-3">
+                <a class="btn-social" href="https://twitter.com/khoumaDev"><i class="bi bi-twitter-x"></i></a>
+                <a class="btn-social" href="https://www.linkedin.com/in/serigne-khouma/"><i class="bi bi-linkedin"></i></a>
+                <a class="btn-social" href="https://github.com/227Faddi/leads-track"><i class="bi bi-github"></i></a>
+                <a class="btn-social" href="https://faliloukhouma.com/"><i class="bi bi-person-fill"></i></a>
             </div>
-            <div class="mb-2">
-              <label class="p-2 fw-bold" for="leadIndustry">Industry:</label>
-              <input type="text" id="leadIndustry" class="form-control" placeholder="Enter industry" name="industry" required>
             </div>
-            <div class="mb-2">
-              <label class="p-2 fw-bold" for="leadPhone">Phone:</label>
-              <input type="number" id="leadPhone" class="form-control" placeholder="Enter phone number" name="phone" required>
-            </div>
-            <div class="mb-2">
-              <label class="p-2 fw-bold" for="leadEmail">Email:</label>
-              <input type="email" id="leadEmail" class="form-control" placeholder="Enter email" name="email" required>
-            </div>
-            <div class="mb-2">
-              <label class="p-2 fw-bold" for="leadNotes">Notes:</label>
-              <textarea class="form-control" id="leadNotes" rows="3" placeholder="Enter additional notes" name="notes"></textarea>
-            </div>
-            <button type="submit" class="btn btn-dark mt-3">Add Lead</button>
-          </form>
-        </div>
-        <!-- Table with Leads -->
-        <div class="col-md-10 mt-5 mt-md-0">
-          <h2 class="text-white">Leads Details</h2>
-          <div class="table-responsive-xl">
-            <table class="table table-striped text-center align-middle">
-              <thead class="table-dark">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Industry</th>
-                  <th scope="col">Phone</th>
-                  <th scope="col">Email</th>
-                  <th scope="col" class="w-25">Notes</th>
-                  <th scope="col">Contacted</th>
-                  <th scope="col">Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% leads.forEach((lead, index) =>{%>
-                  <% if(lead.contacted === 'yes') { %>
-                    <tr class="border lead-details table-success" data-id="<%= lead._id %>">
-                      <th scope="row"><%= index + 1 %></th>
-                      <th><%= lead.name %></th>
-                      <th><%= lead.industry %></th>
-                      <th><%= lead.phone %></th>
-                      <th><%= lead.email %></th>
-                      <th class="text-wrap"><%= lead.notes %></th>
-                      <th class="contacted text-wrap" role="button"><i class="bi bi-check2-circle"></i></th>
-                      <th class="deleteBtn text-wrap" role="button"><i class="bi bi-trash"></i></th>
-                    </tr>
-                  <% } else{ %>
-                    <tr class="border lead-details" data-id="<%= lead._id %>">
-                      <th scope="row"><%= index + 1 %></th>
-                      <th><%= lead.name %></th>
-                      <th><%= lead.industry %></th>
-                      <th><%= lead.phone %></th>
-                      <th><%= lead.email %></th>
-                      <th class="text-wrap"><%= lead.notes %></th>
-                      <th class="notContacted text-wrap" role="button"><i class="bi bi-circle"></i></th>
-                      <th class="deleteBtn text-wrap" role="button"><i class="bi bi-trash"></i></th>
-                    </tr>
-                  <% } %>
-                <% }) %>
-              </tbody>
-            </table>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <footer class="bg-dark text-white py-4 text-center">
-      <div class="d-md-flex justify-content-around align-items-center">
-        <p class="mb-0 col">© 2024 Leads Track. All rights reserved.</p>
-			  <!-- social-links -->
-        <div class="col d-flex justify-content-center mt-md-0 mt-3">
-          <a class="btn-social" href="https://twitter.com/khoumaDev"><i class="bi bi-twitter-x"></i></a>
-          <a class="btn-social" href="https://www.linkedin.com/in/serigne-khouma/"><i class="bi bi-linkedin"></i></a>
-          <a class="btn-social" href="https://github.com/227Faddi/leads-track"><i class="bi bi-github"></i></a>
-          <a class="btn-social" href="https://faliloukhouma.com/"><i class="bi bi-person-fill"></i></a>
-        </div>
-      </div>
-    </footer>
-    <script src='js/main.js'></script>
-  </body>
+        </footer>
+        <script src='js/main.js'></script>
+    </body>  
 </html>

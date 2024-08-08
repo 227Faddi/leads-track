@@ -14,13 +14,23 @@ body{
     background-size: cover;
 }
 
+#home-icon{
+    width: 200px;
+}
+
 th, td {
     word-wrap: break-word;
     white-space: normal;
 }
 
+.content {
+    flex: 1; /* Pushes the footer to the bottom */
+}
+
+
 footer{
     margin-top: 300px;
+    justify-self: end;
 }
 
 .btn-social {

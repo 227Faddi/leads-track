@@ -3,18 +3,6 @@ const notContacted = document.querySelectorAll('.notContacted')
 const contacted = document.querySelectorAll('.contacted')
 const leadDetails = document.querySelectorAll('.lead-details') 
 
-document.addEventListener('DOMContentLoaded', function () {
-  const modalKey = 'modalShown';
-  // Check if the modal has been shown in this session
-  if (!sessionStorage.getItem(modalKey)) {
-    const myModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
-    myModal.show();
-    // Set the flag in session storage so the modal doesn't show again during the session
-    sessionStorage.setItem(modalKey, 'true');
-  }
-});
-
-
 Array.from(deleteBtn).forEach((element) =>{
   element.addEventListener('click', deleteLead)
 })
@@ -22,7 +10,7 @@ Array.from(deleteBtn).forEach((element) =>{
 async function deleteLead(){
   const leadId = this.parentNode.getAttribute('data-id');
   try{
-    const response = await fetch('/deleteLead', {
+    const response = await fetch('/leads/deleteLead', {
       method: 'delete',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -44,7 +32,7 @@ Array.from(notContacted).forEach((element) =>{
 async function leadContacted(){ 
   const leadId = this.parentNode.getAttribute('data-id');
   try{
-    const response = await fetch('/contacted', {
+    const response = await fetch('/leads/markContacted', {
       method: 'put',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -66,7 +54,7 @@ Array.from(contacted).forEach((element) =>{
 async function leadNotContacted(){
   const leadId = this.parentNode.getAttribute('data-id');
   try{
-    const response = await fetch('/notContacted', {
+    const response = await fetch('/leads/markUnContacted', {
       method: 'put',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
