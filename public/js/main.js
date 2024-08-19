@@ -1,16 +1,23 @@
 const deleteBtn = document.querySelectorAll('.deleteBtn')
 const notContacted = document.querySelectorAll('.notContacted')
 const contacted = document.querySelectorAll('.contacted')
-const leadDetails = document.querySelectorAll('.lead-details') 
 
 Array.from(deleteBtn).forEach((element) =>{
   element.addEventListener('click', deleteLead)
 })
 
+Array.from(notContacted).forEach((element) =>{
+  element.addEventListener('click', markContacted)
+})
+
+Array.from(contacted).forEach((element) =>{
+  element.addEventListener('click', markUnContacted)
+})
+
 async function deleteLead(){
   const leadId = this.parentNode.getAttribute('data-id');
   try{
-    const response = await fetch('/leads/deleteLead', {
+    const response = await fetch('/dashboard/deleteLead', {
       method: 'delete',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -25,14 +32,10 @@ async function deleteLead(){
   }
 }
 
-Array.from(notContacted).forEach((element) =>{
-  element.addEventListener('click', leadContacted)
-})
-
-async function leadContacted(){ 
+async function markContacted(){ 
   const leadId = this.parentNode.getAttribute('data-id');
   try{
-    const response = await fetch('/leads/markContacted', {
+    const response = await fetch('/dashboard/markContacted', {
       method: 'put',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -47,14 +50,10 @@ async function leadContacted(){
   }
 }
 
-Array.from(contacted).forEach((element) =>{
-  element.addEventListener('click', leadNotContacted)
-})
-
-async function leadNotContacted(){
+async function markUnContacted(){
   const leadId = this.parentNode.getAttribute('data-id');
   try{
-    const response = await fetch('/leads/markUnContacted', {
+    const response = await fetch('/dashboard/markUnContacted', {
       method: 'put',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -68,7 +67,6 @@ async function leadNotContacted(){
     console.log(err)
   }
 }
-
 
 // SCROLL RELOAD FIX
 // Save scroll position before the page unloads

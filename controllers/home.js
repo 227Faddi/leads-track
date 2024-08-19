@@ -1,5 +1,5 @@
-module.exports = {
-    getIndex: (req,res)=>{
-        res.render('index.ejs')
+export default {
+    getHome: (req,res)=>{
+        res.render('home.ejs')
     }
 }

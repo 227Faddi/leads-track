@@ -1,21 +1,61 @@
-const express = require('express')
+import express from 'express';
+import dotenv from 'dotenv';
+import morgan from 'morgan';
+import passport from 'passport';
+import MongoStore from 'connect-mongo';
+import session from 'express-session';
+import methodOverride from 'method-override';
+// CONFIG
+import connectDB from './config/database.js';
+import passportConfig from './config/passport.js'
+// MIDDLEWARE
+import overrideMiddleware from './middleware/method-override.js'
+// ROUTES
+import homeRoutes from './routes/home.js';
+import dashboardRoutes from './routes/dashboard.js';
+import authRoutes from './routes/auth.js';
+
+dotenv.config({path: './config/.env'})
+
 const app = express()
-const connectDB = require('./config/database')
-const homeRoutes = require('./routes/home')
-const leadsRoutes = require('./routes/leads')
-
-
-require('dotenv').config({path: './config/.env'})
-
 connectDB()
+// Passport Config
+passportConfig(passport)
 
-app.set('view engine', 'ejs')
-app.use(express.static('public'))
+
+
+// Body parser
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
+// Sessions
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: process.env.DB_STRING })
+}))
+
+// Passport Middleware
+app.use(passport.initialize())
+app.use(passport.session())
+
+// Logging
+if(process.env.NODE_ENV === 'development'){
+    app.use(morgan('dev'))
+}
+
+// Static folder and view engine
+app.set('view engine', 'ejs')
+app.use(express.static('public'))
+
+// Method Override
+app.use(overrideMiddleware.get)
+
+// Routes
 app.use('/', homeRoutes)
-app.use('/leads', leadsRoutes)
+app.use('/dashboard', dashboardRoutes)
+app.use('/auth', authRoutes)
  
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')

@@ -14,6 +14,15 @@ body{
     background-size: cover;
 }
 
+.container {
+    max-width: 600px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
 #home-icon{
     width: 200px;
 }
@@ -44,4 +53,29 @@ footer{
     border: 1px solid #fff;
     color: #fff;
     margin: 0 0.25em;
+}
+
+/* Define colors for different statuses */
+.new {
+    --bs-table-bg: #fff;
+    --bs-table-color: #000;
+}
+
+.contacted {
+    --bs-table-bg: #d1ecf1;
+    --bs-table-color: #004085;
+}
+
+.pending {
+    --bs-table-bg: #ffebcc; /* Light orange background */
+    --bs-table-color: #ff9800; /* Dark orange text */
+    --bs-table-striped-bg: #ffd54f; /* Slightly darker orange for stripes */
+    --bs-table-striped-color: #ff9800; /* Same dark orange text for stripes */
+}
+
+.closed {
+    --bs-table-bg: #d4edda;
+    --bs-table-color: #155724;
+    --bs-table-striped-bg: #c3e6cb;
+    --bs-table-striped-color: #155724;
 }

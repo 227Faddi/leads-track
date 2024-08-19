@@ -1,7 +1,9 @@
-const express = require('express')
+import express from 'express';
+import homeController from '../controllers/home.js';
+import authMiddleware from '../middleware/home.js'
+
 const router = express.Router()
-const homeController = require('../controllers/home')
 
-router.get('/', homeController.getIndex) 
+router.get('/', authMiddleware.ensureGuest, homeController.getHome) 
 
-module.exports = router
+export default router;

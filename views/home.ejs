@@ -22,12 +22,21 @@
         <!-- CSS -->
         <link rel="stylesheet" href="/css/style.css">
     </head>
-    <body class="d-flex flex-column">
-        <div class="content container-fluid phone text-white text-center d-flex flex-column justify-content-center align-items-center">
+    <body class="">
+        <div class="text-white text-center d-flex flex-column justify-content-center align-items-center">
             <img class="my-5" id="home-icon" src="/assets/img/icon.svg" alt="">
             <h1>Welcome to Leads Track!</h1>
             <p class="w-50 fs-4 my-3">Simplify lead management. Our app helps you keep track of all your sales leads, including key details and follow-ups. Start organizing your leads today for a more efficient sales process.</p>
-            <a class="btn btn-dark fs-5" href="/leads">Get Started</a>
+            <a href="/auth/google" class="btn btn-danger d-flex align-items-center justify-content-center">
+                <i class="bi bi-google" style="font-size: 1.2rem; margin-right: 8px;"></i>
+                Log in with Google
+            </a>
+            <a href="/login" class="mt-3 btn btn-light d-flex align-items-center justify-content-center">
+                Log In
+            </a>
+            <a href="/signup" class="mt-3 btn btn-light d-flex align-items-center justify-content-center">
+                Sign Up
+            </a>
         </div>
         <footer class="bg-dark text-white py-4 text-center">
             <div class="d-md-flex justify-content-around align-items-center">
