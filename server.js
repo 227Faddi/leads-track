@@ -5,6 +5,7 @@ import passport from 'passport';
 import MongoStore from 'connect-mongo';
 import session from 'express-session';
 import methodOverride from 'method-override';
+import flash from 'express-flash';
 // CONFIG
 import connectDB from './config/database.js';
 import passportConfig from './config/passport.js'
@@ -30,7 +31,7 @@ app.use(express.json())
 
 // Sessions
 app.use(session({
-    secret: 'keyboard cat',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: process.env.DB_STRING })
@@ -51,6 +52,7 @@ app.use(express.static('public'))
 
 // Method Override
 app.use(overrideMiddleware.get)
+app.use(flash())
 
 // Routes
 app.use('/', homeRoutes)

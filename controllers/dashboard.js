@@ -8,7 +8,7 @@ export default {
             leadsItems.sort((a, b) => {
                 return statusOrder.indexOf(a.status) - statusOrder.indexOf(b.status);
             });
-            res.render('dashboard.ejs', {leads: leadsItems})
+            res.render('dashboard.ejs', {leads: leadsItems, user: req.user.userName})
         }catch(err){
             console.log(err)
         }

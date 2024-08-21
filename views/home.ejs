@@ -1,55 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <link rel="canonical" href="https://leads-track.onrender.com/">
-        <meta name="description" content="Leads tracker"/>
-        <meta name="keywords" content="Leads tracker">
-        <title>Leads Track - Home</title>
-        <!-- favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-        <link rel="manifest" href="/assets/favicon/site.webmanifest">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
-        <!-- Bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-        <!-- CSS -->
-        <link rel="stylesheet" href="/css/style.css">
+        <%- include('partials/head.ejs', { title: 'Home' }) %>
     </head>
-    <body class="">
-        <div class="text-white text-center d-flex flex-column justify-content-center align-items-center">
-            <img class="my-5" id="home-icon" src="/assets/img/icon.svg" alt="">
-            <h1>Welcome to Leads Track!</h1>
-            <p class="w-50 fs-4 my-3">Simplify lead management. Our app helps you keep track of all your sales leads, including key details and follow-ups. Start organizing your leads today for a more efficient sales process.</p>
-            <a href="/auth/google" class="btn btn-danger d-flex align-items-center justify-content-center">
-                <i class="bi bi-google" style="font-size: 1.2rem; margin-right: 8px;"></i>
-                Log in with Google
-            </a>
-            <a href="/login" class="mt-3 btn btn-light d-flex align-items-center justify-content-center">
-                Log In
-            </a>
-            <a href="/signup" class="mt-3 btn btn-light d-flex align-items-center justify-content-center">
-                Sign Up
-            </a>
+    <body>
+        <div class="d-flex flex-column min-vh-100">
+            <div class="text-white text-center d-flex flex-column justify-content-center align-items-center flex-grow-1">
+                <img class="my-5" id="home-icon" src="/assets/img/icon.svg" alt="">
+                <h1>Welcome to Leads Track!</h1>
+                <p class="w-50 fs-4 my-3">Simplify lead management. Our app helps you keep track of all your sales leads, including key details and follow-ups. Start organizing your leads today for a more efficient sales process.</p>
+                <div class="d-flex gap-4">
+                    <a href="/auth/login" class="mb-3 btn btn-dark d-flex align-items-center justify-content-center">
+                        Log In
+                    </a>
+                    <a href="/auth/signup" class="mb-3 btn btn-dark d-flex align-items-center justify-content-center">
+                        Sign Up
+                    </a>
+                </div>
+                <a href="/auth/google" class="mb-3 btn btn-danger d-flex align-items-center justify-content-center">
+                    <i class="bi bi-google" style="font-size: 1.2rem; margin-right: 8px;"></i>
+                    Log in with Google
+                </a>
+            </div>
+            <!-- FOOTER -->
+            <%- include('partials/footer.ejs') %>
         </div>
-        <footer class="bg-dark text-white py-4 text-center">
-            <div class="d-md-flex justify-content-around align-items-center">
-            <p class="mb-0 col">© 2024 Leads Track. All rights reserved.</p>
-            <!-- social-links -->
-            <div class="col d-flex justify-content-center mt-md-0 mt-3">
-                <a class="btn-social" href="https://twitter.com/khoumaDev"><i class="bi bi-twitter-x"></i></a>
-                <a class="btn-social" href="https://www.linkedin.com/in/serigne-khouma/"><i class="bi bi-linkedin"></i></a>
-                <a class="btn-social" href="https://github.com/227Faddi/leads-track"><i class="bi bi-github"></i></a>
-                <a class="btn-social" href="https://faliloukhouma.com/"><i class="bi bi-person-fill"></i></a>
-            </div>
-            </div>
-        </footer>
         <script src='js/main.js'></script>
     </body>  
 </html>

@@ -24,22 +24,12 @@ a{
 }
 
 #home-icon{
-    width: 200px;
+    height: 150px;
 }
 
 th, td {
     word-wrap: break-word;
     white-space: normal;
-}
-
-.content {
-    flex: 1; /* Pushes the footer to the bottom */
-}
-
-
-footer{
-    margin-top: 300px;
-    justify-self: end;
 }
 
 .btn-social {
@@ -55,7 +45,7 @@ footer{
     margin: 0 0.25em;
 }
 
-/* Define colors for different statuses */
+/* Status colors */
 .new {
     --bs-table-bg: #fff;
     --bs-table-color: #000;
@@ -67,10 +57,10 @@ footer{
 }
 
 .pending {
-    --bs-table-bg: #ffebcc; /* Light orange background */
-    --bs-table-color: #ff9800; /* Dark orange text */
-    --bs-table-striped-bg: #ffd54f; /* Slightly darker orange for stripes */
-    --bs-table-striped-color: #ff9800; /* Same dark orange text for stripes */
+    --bs-table-bg: #ffebcc;
+    --bs-table-color: #ff9800; 
+    --bs-table-striped-bg: #ffd54f;
+    --bs-table-striped-color: #ff9800; 
 }
 
 .closed {
