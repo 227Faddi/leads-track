@@ -20,10 +20,9 @@ dotenv.config({path: './config/.env'})
 
 const app = express()
 connectDB()
+
 // Passport Config
 passportConfig(passport)
-
-
 
 // Body parser
 app.use(express.urlencoded({ extended: true }))

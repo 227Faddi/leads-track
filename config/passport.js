@@ -12,7 +12,6 @@ export default function(passport){
           callbackURL: process.env.GOOGLE_CALLBACK_URL,
         },
         async (accessToken, refreshToken, profile, done) => {
-            console.log(profile)
             const newUser = {
                 googleId: profile.id,
                 userName: profile.displayName,
@@ -44,7 +43,6 @@ export default function(passport){
                 });
             }
             const isMatch = await user.comparePassword(password);
-            
             if (isMatch) {
                 return done(null, user);
             } else {

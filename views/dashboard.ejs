@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include('partials/head.ejs', { title: 'Dashboard' }) %>
+    <%- include('partials/head.ejs', { title: 'Dashboard', link: 'https://leads-track.onrender.com/dashboard' }) %>
   </head>
   <body>
     <div class="d-flex flex-column min-vh-100">
       <!-- LEADS TABLE -->
-      <div class="container-fluid px-md-5">
+      <div class="container-fluid px-md-5 pb-5">
         <h1 class="text-center text-white my-5">Leads Track</h1>
         <div class="d-flex justify-content-between mb-3">
           <a href="/dashboard/addLeadForm" class="text-white btn btn-dark">Add Lead</a>

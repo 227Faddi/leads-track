@@ -73,7 +73,6 @@ export default {
     },
     deleteLead: async (req, res)=>{
         try{
-            console.log(req)
             await LeadsDB.findByIdAndDelete(req.params.id)
             res.redirect('/dashboard')
         }catch(err){

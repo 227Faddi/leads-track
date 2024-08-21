@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('partials/head.ejs', { title: 'Add Lead' }) %>
+    <%- include('partials/head.ejs', { title: 'Add Lead', link: 'https://leads-track.onrender.com/dashboard/addLead' }) %>
 </head>
 <body>
     <div class="d-flex flex-column min-vh-100">
@@ -12,7 +12,7 @@
                 <form action="/dashboard/addLead" method="POST" class="text-white ">
                     <div class="mb-2">
                         <label class="p-2 fw-bold" for="name">Name:</label>
-                        <input type="text" id="name" class="form-control" placeholder="Enter lead name" name="name" required>
+                        <input type="text" id="name" class="form-control" placeholder="Enter name" name="name" required>
                     </div>
                     <div class="mb-2">
                         <label class="p-2 fw-bold" for="industry">Industry:</label>

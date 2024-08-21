@@ -27,7 +27,6 @@ export default {
     const validationErrors = []
     if (!validator.isEmail(req.body.email)) validationErrors.push({ msg: 'Please enter a valid email address.' })
     if (validator.isEmpty(req.body.password)) validationErrors.push({ msg: 'Password cannot be blank.' })
-  
     if (validationErrors.length) {
       req.flash('errors', validationErrors)
       return res.redirect('/auth/login')
@@ -74,7 +73,6 @@ export default {
         email: req.body.email,
         password: req.body.password
       });
-      // Save the user to the database
       await user.save();
       // Log the user in
       req.logIn(user, (err) => {
