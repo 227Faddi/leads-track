@@ -1,5 +1,5 @@
 # 📊 Leads Track : [Visit Here](https://leads-track.onrender.com/)
-Leads Track is an application designed to manage and track sales leads. It lets users easily add new leads, view detailed information, and monitor interactions to ensure timely follow-ups. The application includes authentication using Passport.js with Google OAuth2 and local strategy, enabling secure user logins.
+Leads Track is an application designed to manage and track sales leads. It lets users easily add new leads, view detailed information, and monitor interactions to ensure timely follow-ups. The application includes authentication using Passport.js with Google OAuth20 and local strategy, enabling secure user logins.
 
 ![Leads Track Preview](/public/assets/img/preview.gif)
 
