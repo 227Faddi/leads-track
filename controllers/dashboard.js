@@ -3,7 +3,7 @@ import LeadsDB from '../models/Lead.js';
 export default {
     getDashboard: async (req,res)=>{
         try{
-            const leadsItems = await LeadsDB.find({userId: req.user.id })
+            const leadsItems = await LeadsDB.find({userId: req.user.id }).lean()
             const statusOrder = ['new', 'contacted', 'pending', 'closed'];
             leadsItems.sort((a, b) => {
                 return statusOrder.indexOf(a.status) - statusOrder.indexOf(b.status);
@@ -36,7 +36,7 @@ export default {
     },
     editLeadForm: async (req, res)=>{
         try{
-            const leadItem = await LeadsDB.findById(req.params.id)
+            const leadItem = await LeadsDB.findById(req.params.id).lean()
             res.render('editLead.ejs', { lead: leadItem })
         }catch(err){
             console.log(err)
@@ -44,7 +44,7 @@ export default {
     },
     editLead: async (req, res)=>{
         try{
-            let lead = await LeadsDB.findById(req.params.id)
+            let lead = await LeadsDB.findById(req.params.id).lean()
             if (!lead) {
                 return res.redirect('/dashboard')
             }
