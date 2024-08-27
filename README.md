@@ -3,6 +3,10 @@ Leads Track is an application designed to manage and track sales leads. It lets 
 
 ![Leads Track Preview](/public/assets/img/preview.gif)
 
+**Try the App:** You can log in as a guest using the following credentials:
+- **Email:** guest@gmail.com
+- **Password:** helloworld
+
 ## How It's Made:
 
 **Tech used:** 
