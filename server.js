@@ -58,9 +58,9 @@ app.use('/', homeRoutes)
 app.use('/dashboard', dashboardRoutes)
 app.use('/auth', authRoutes)
 
-// app.listen(process.env.PORT, ()=>{
-    //     console.log('Server is running, you better catch it!')
-// })    
+app.listen(process.env.PORT, ()=>{
+    console.log('Server is running, you better catch it!')
+})    
   
 // Vercel Deployment
 export default app;
