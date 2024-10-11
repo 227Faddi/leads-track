@@ -32,5 +32,5 @@ const LeadSchema = new mongoose.Schema({
   },
 })
 
-const User = mongoose.model('Lead', LeadSchema)
-export default User
+const Lead = mongoose.model('Lead', LeadSchema)
+export default Lead
